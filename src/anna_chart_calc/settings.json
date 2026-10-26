@@ -1,0 +1,24 @@
+{
+  "_comment": "Calculation settings. Defaults reproduce the Anna Birth Chart reference charts (Oct 2026). Override with --settings FILE (keys are merged, top level).",
+  "house_system": "P",
+  "planets": [
+    ["Sun", "SUN"], ["Moon", "MOON"], ["Mercury", "MERCURY"], ["Venus", "VENUS"], ["Mars", "MARS"],
+    ["Jupiter", "JUPITER"], ["Saturn", "SATURN"], ["Uranus", "URANUS"], ["Neptune", "NEPTUNE"], ["Pluto", "PLUTO"],
+    ["North Node", "TRUE_NODE"], ["Chiron", "CHIRON"], ["Lilith", "MEAN_APOG"]
+  ],
+  "natal_aspects": {"conjunction": 0, "sextile": 60, "square": 90, "trine": 120, "opposition": 180},
+  "natal_orbs": {"conjunction": 8, "sextile": 5, "square": 7, "trine": 7, "opposition": 8},
+  "minor_points": ["North Node", "Lilith", "Chiron"],
+  "minor_point_orb": 3,
+  "time_unknown_local_time": "12:00",
+  "transits": {
+    "planets": [["Jupiter", "JUPITER"], ["Saturn", "SATURN"], ["Uranus", "URANUS"], ["Neptune", "NEPTUNE"], ["Pluto", "PLUTO"]],
+    "aspects": {"conjunct": 0, "sextile": 60, "square": 90, "trine": 120, "opposite": 180},
+    "skip": {"Jupiter": ["sextile"]},
+    "exclude_natal": ["Lilith"],
+    "orb": 1.0,
+    "step_days": 4,
+    "merge_gap_days": 60,
+    "years": 11
+  }
+}

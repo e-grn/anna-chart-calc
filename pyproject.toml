@@ -1,0 +1,40 @@
+[project]
+name = "anna-chart-calc"
+version = "0.1.0"
+description = "Natal chart and transit calculation with historical time zones (Swiss Ephemeris)"
+readme = "README.md"
+license = "AGPL-3.0-only"
+license-files = ["LICENSE"]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+  "pyswisseph==2.10.3.2",
+  "timezonefinder>=6.5",
+  "tzdata>=2024.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+anna-chart-calc = "anna_chart_calc.cli:main"
+
+[project.urls]
+Source = "https://github.com/e-grn/anna-chart-calc"
+
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/anna_chart_calc"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "PL", "BLE"]
+ignore = ["PLR0913", "PLR0912", "PLR0915", "PLR2004", "PLR0914", "PLR0911", "PLR0917"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
